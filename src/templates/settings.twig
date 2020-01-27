@@ -1,0 +1,54 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Newsletter2Go plugin for Craft CMS 3.x
+ *
+ * Newsletter2Go Settings.twig
+ *
+ * @author    Niklas Sonnenschein
+ * @copyright Copyright (c) 2020 Niklas Sonnenschein
+ * @link      https://niklassonnenschein.de
+ * @package   Newsletter2Go
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("hfg\\newsletter2go\\assetbundles\\newsletter2go\\Newsletter2GoAsset") %}
+
+{{ forms.textField({
+    label: "Auth-Key",
+    instructions: 'Der Auth-Key ist in den <a href="https://ui.newsletter2go.com/api-client" target="_blank">API Credentials</a> zu finden.',
+    id: "authKey",
+    name: "authKey",
+    value: settings["authKey"]})
+}}
+
+{{ forms.textField({
+    label: "Benutzername / E-Mail",
+    id: "userName",
+    name: "userName",
+    value: settings['userName']})
+}}
+
+{{ forms.passwordField({
+    label: "Passwort",
+    id: "userPassword",
+    name: "userPassword",
+    value: settings["userPassword"]})
+}}
+
+{{ forms.textField({
+    label: "Formular-ID",
+    id: "formId",
+    name: "formId",
+    value: settings["formId"]})
+}}
+
+{{ forms.textareaField({
+    label: "Nachricht bei erfolgreicher Anmeldung",
+    id: "successFlashMessage",
+    name: "successFlashMessage",
+    value: settings["successFlashMessage"]})
+}}

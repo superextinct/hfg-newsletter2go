@@ -1,0 +1,43 @@
+{
+    "name": "hfg/newsletter2go",
+    "description": "API integration with Newsletter2Go",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "newsletter2go"
+    ],
+    "support": {
+        "docs": "https://github.com/superextinct/newsletter2-go/blob/master/README.md",
+        "issues": "https://github.com/superextinct/newsletter2-go/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Niklas Sonnenschein",
+            "homepage": "https://niklassonnenschein.de"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "hfg\\newsletter2go\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Newsletter2Go",
+        "handle": "newsletter2-go",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/superextinct/newsletter2-go/master/CHANGELOG.md",
+        "components": {
+            "apiService": "hfg\\newsletter2go\\services\\ApiService"
+        },
+        "class": "hfg\\newsletter2go\\Newsletter2Go"
+    }
+}
