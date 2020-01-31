@@ -67,9 +67,6 @@ class SubscriptionController extends Controller
         $request = Craft::$app->getRequest();
         $settings = Newsletter2Go::$plugin->getSettings();
 
-        $name = $request->getBodyParam("recipientName");
-        $email = $request->getBodyParam("recipientEmail");
-
         $contact = new Contact();
         $contact->name = $request->getBodyParam("recipientName");
         $contact->email = $request->getBodyParam("recipientEmail");

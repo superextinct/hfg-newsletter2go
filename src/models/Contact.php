@@ -48,7 +48,7 @@ class Contact extends Model
     public function attributeLabels()
     {
         return [
-            'name' => \Craft::t('newsletter2-go', 'Vorname'),
+            'name' => \Craft::t('newsletter2-go', 'Name'),
             'email' => \Craft::t('newsletter2-go', 'E-Mail')
         ];
     }
@@ -65,9 +65,9 @@ class Contact extends Model
      */
     public function rules()
     {
-        return [
+        return array_merge(parent::rules(), [
             [['email'], 'required'],
-            [['email'], 'email'],
-        ];
+            [['email'], 'email', "message" => \Craft::t("newsletter2-go", "{attribute} is not a valid address.")],
+        ]);
     }
 }
