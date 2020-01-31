@@ -2,7 +2,7 @@
     "name": "hfg/newsletter2go",
     "description": "API integration with Newsletter2Go",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "craft",
         "cms",
