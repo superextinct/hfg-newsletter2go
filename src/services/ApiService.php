@@ -40,9 +40,9 @@ class ApiService extends Component
 
     public function __construct()
     {
-        $this->user_auth_key = Newsletter2Go::getInstance()->settings->authKey;
-        $this->user_email = Newsletter2Go::getInstance()->settings->userName;
-        $this->user_pw = Newsletter2Go::getInstance()->settings->userPassword;
+        $this->user_auth_key = Newsletter2Go::getInstance()->settings->getAuthKey();
+        $this->user_email = Newsletter2Go::getInstance()->settings->getUserName();
+        $this->user_pw = Newsletter2Go::getInstance()->settings->getUserPassword();
     }
 
     public function auth()
@@ -127,8 +127,7 @@ class ApiService extends Component
     }
 
     public function subscribe($contact) {
-        $formId = Newsletter2Go::getInstance()->settings->formId;
-        $endpoint = "/forms/submit/" . $formId;
+        $endpoint = "/forms/submit/" . Newsletter2Go::getInstance()->settings->getFormId();
         $data = [
             "recipient" => [
                 "email" => $contact->email,

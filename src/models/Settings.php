@@ -66,4 +66,24 @@ class Settings extends Model
             [['formId'], 'default']
         ];
     }
+
+    public function getAuthKey(): string
+    {
+        return Craft::parseEnv($this->authKey);
+    }
+
+    public function getUserName(): string
+    {
+        return Craft::parseEnv($this->userName);
+    }
+
+    public function getUserPassword(): string
+    {
+        return Craft::parseEnv($this->userPassword);
+    }
+
+    public function getFormId(): string
+    {
+        return Craft::parseEnv($this->formId);
+    }
 }
